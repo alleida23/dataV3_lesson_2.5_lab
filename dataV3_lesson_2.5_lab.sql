@@ -10,8 +10,7 @@ WHERE first_name = 'Scarlett';
 SELECT COUNT(rental_id) AS "Avail. Films" , COUNT(return_date) AS "Rented Films"
 FROM rental;
 
-#available NOW or total inventory?
-
+#Total inventory or available NOW?
 
 SELECT count(rental_date), count(return_date) from rental;
 SELECT count((rental_date-return_date)) from rental;
@@ -25,7 +24,7 @@ FROM film;
 SELECT SEC_TO_TIME(AVG(length*60)) FROM film;
 
 #5. How many distinct (different) actors' last names are there?
-SELECT COUNT(DISTINCT last_name) AS 'differents last names'
+SELECT COUNT(DISTINCT last_name) AS 'diff. last names'
 FROM actor;
 
 #6. Since how many DAYS has the company been operating (check DATEDIFF() function)? check first rental-today DATEDIFF
@@ -62,7 +61,7 @@ LIMIT 10;
 
 #13. How many films include Behind the Scenes content?
 
-SELECT COUNT(*) AS 'Behind the Scenes'
+SELECT COUNT(*) AS 'Behind the Scenes included'
 FROM film
 WHERE special_features LIKE "%Behind_the_Scenes%"; 
 
